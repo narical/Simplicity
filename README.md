@@ -1,5 +1,5 @@
 # jnsl
-'''Joy Narical's simplest lootfilter''' for Path of Diablo
+**Joy Narical's simplest lootfilter** for Path of Diablo
 
 ## Overview
 The most basic lootfilter, created with KISS (*Keep It Simple, Stupid*) principle in mind.
