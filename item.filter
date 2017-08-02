@@ -1,0 +1,108 @@
+﻿// Simplest Lootfilter by Joy Narical, 2017
+// more info at http://pathofdiablo.com/wiki/index.php/Loot_Filtration
+
+// Hide gold piles below certain treshhold
+ItemDisplay[GOLD<500]:
+
+// POTIONS
+ItemDisplay[hp1 OR hp2 OR hp3]:									// hide low-grade healing potions
+ItemDisplay[mp1 OR mp2 OR mp3]:									// hide low-grade mana potions
+
+ItemDisplay[hp4]: %RED%[%GRAY%Health%RED%]						// Greater Healing potion
+ItemDisplay[hp5]: %RED%[%WHITE%Health%RED%]						// Super Healing potion
+ItemDisplay[mp4]: %BLUE%[%GRAY%Mana%BLUE%]						// Greater Mana potion
+ItemDisplay[mp5]: %BLUE%[%WHITE%Mana%BLUE%]						// Super Mana potion
+ItemDisplay[rvs]: %PURPLE%[%GRAY%Rejuvenation%PURPLE%]			// Rejuvenation potion
+ItemDisplay[rvl]: %PURPLE%[%WHITE%Rejuvenation%PURPLE%]			// Full Rejuvenation potion
+
+// hide low-grade gems
+ItemDisplay[gcv OR gcy OR gcb OR gcg OR gcr OR gcw OR skc]:		// chipped
+ItemDisplay[gfv OR gfy OR gfb OR gfg OR gfr OR gfw OR skf]:		// flawed
+
+// hide white/magic arrows and bolts
+ItemDisplay[(aq2 OR cq2) !RARE]:
+
+//hide Choking, Exploding, Fulminating, Oil, Rancid, Strangling potions
+ItemDisplay[gpm OR opm OR opl OR ops OR gps OR gpl]:
+
+//hide locked chests' keys
+ItemDisplay[key]:
+
+// Wirt's leg :)
+ItemDisplay[leg]: %NAME%
+
+// Hide stamina potions
+// Make scrolls and thawing/antidote potions barely visible
+ItemDisplay[vps]:
+ItemDisplay[tsc]: %BLACK% TownPortal
+ItemDisplay[isc]: %BLACK% Identify
+ItemDisplay[wms]: %BLACK% Thawing
+ItemDisplay[yps]: %BLACK% Antidote
+
+// Show fewer-socketed white/magic staves, wands and scepters with vendor price
+ItemDisplay[(WP11 OR WP12 OR WP13) !RARE !UNI !SET SOCK<5]: %NAME% ($ %PRICE%)
+
+// ===>>> ADD YOUR CUSTOM RULES HERE! <<<===
+
+// NORMAL ITEMS
+ItemDisplay[NORM			NMAG	!SUP	!INF	SOCK<5]:
+ItemDisplay[NORM			NMAG	!SUP	!INF	SOCK>4]:	%NAME% [%SOCKETS%]
+ItemDisplay[NORM			INF					]:
+ItemDisplay[NORM			MAG					]:
+ItemDisplay[NORM	ETH SUP		SOCK<2]:
+ItemDisplay[NORM	ETH SUP		SOCK>1]:	Ethereal %NAME% [%SOCKETS%]
+ItemDisplay[NORM			SUP		SOCK<5]:
+ItemDisplay[NORM			SUP		SOCK>4]:	%NAME% [%SOCKETS%]
+ItemDisplay[NORM	ETH RARE	SOCK=0]:	Ethereal %NAME%
+ItemDisplay[NORM	ETH RARE	SOCK>0]:	Ethereal %NAME% [%SOCKETS%]
+ItemDisplay[NORM			RARE	SOCK=0]:	%NAME%
+ItemDisplay[NORM			RARE	SOCK>0]:	%NAME% [%SOCKETS%]
+ItemDisplay[NORM	ETH UNI					]:	Ethereal %NAME% (uniq)
+ItemDisplay[NORM			UNI					]:	%NAME% (uniq)
+ItemDisplay[NORM	ETH RW					]:	Ethereal %NAME% (runeword)
+ItemDisplay[NORM			RW					]:	%NAME% (runeword)
+ItemDisplay[NORM			SET		SOCK=0]:	%NAME%
+ItemDisplay[NORM			SET		SOCK>0]:	%NAME% [%SOCKETS%]
+
+// EXCEPTIONAL ITEMS
+ItemDisplay[EXC			NMAG	!SUP	!INF	SOCK<2]:
+ItemDisplay[EXC			NMAG	!SUP	!INF	SOCK>1]:	%NAME% [%SOCKETS%]%RED%*
+ItemDisplay[EXC			INF					]:
+ItemDisplay[EXC			MAG		SOCK<2]:
+ItemDisplay[EXC			MAG		SOCK>1]:	%NAME% [%SOCKETS%]%RED%*
+ItemDisplay[EXC	ETH SUP		SOCK<2]:
+ItemDisplay[EXC	ETH SUP		SOCK>1]:	Ethereal %NAME% [%SOCKETS%]%RED%*
+ItemDisplay[EXC			SUP		SOCK<2]:	
+ItemDisplay[EXC			SUP		SOCK>1]:	%NAME% [%SOCKETS%]%RED%*
+ItemDisplay[EXC	ETH RARE	SOCK=0]:	Ethereal %NAME%%RED%*
+ItemDisplay[EXC	ETH RARE	SOCK>0]:	Ethereal %NAME% [%SOCKETS%]%RED%*
+ItemDisplay[EXC			RARE	SOCK=0]:	%NAME%%RED%*
+ItemDisplay[EXC			RARE	SOCK>0]:	%NAME% [%SOCKETS%]%RED%*
+ItemDisplay[EXC	ETH UNI					]:	Ethereal %NAME% (uniq)%RED%*
+ItemDisplay[EXC			UNI					]:	%NAME% (uniq)%RED%*
+ItemDisplay[EXC	ETH RW					]:	Ethereal %NAME% (runeword)%RED%*
+ItemDisplay[EXC			RW					]:	%NAME% (runeword)%RED%*
+ItemDisplay[EXC			SET		SOCK=0]:	%NAME%%RED%*
+ItemDisplay[EXC			SET		SOCK>0]:	%NAME% [%SOCKETS%]%RED%*
+
+// ELITE ITEMS
+ItemDisplay[ELT			NMAG	!SUP	!INF	SOCK=0]:	%NAME%%RED%**
+ItemDisplay[ELT			NMAG	!SUP	!INF	SOCK>0]:	%NAME% [%SOCKETS%]%RED%**
+ItemDisplay[ELT			INF					]:
+ItemDisplay[ELT			MAG		SOCK=0]:	%NAME%%RED%**
+ItemDisplay[ELT			MAG		SOCK>0]:	%NAME% [%SOCKETS%]%RED%**
+ItemDisplay[ELT	ETH SUP		SOCK=0]:	Ethereal %NAME%%RED%**
+ItemDisplay[ELT	ETH SUP		SOCK>0]:	Ethereal %NAME% [%SOCKETS%]%RED%**
+ItemDisplay[ELT			SUP		SOCK=0]:	%NAME%%RED%**
+ItemDisplay[ELT			SUP		SOCK>0]:	%NAME% [%SOCKETS%]%RED%**
+ItemDisplay[ELT	ETH RARE	SOCK=0]:	Ethereal %NAME%%RED%**
+ItemDisplay[ELT	ETH RARE	SOCK>0]:	Ethereal %NAME% [%SOCKETS%]%RED%**
+ItemDisplay[ELT			RARE	SOCK=0]:	%NAME%%RED%**
+ItemDisplay[ELT			RARE	SOCK>0]:	%NAME% [%SOCKETS%]%RED%**
+ItemDisplay[ELT	ETH UNI					]:	Ethereal %NAME% (uniq)%RED%**
+ItemDisplay[ELT			UNI					]:	%NAME% (uniq)%RED%**
+ItemDisplay[ELT	ETH RW					]:	Ethereal %NAME% (runeword)%RED%**
+ItemDisplay[ELT			RW					]:	%NAME% (runeword)%RED%**
+ItemDisplay[ELT			SET		SOCK=0]:	%NAME%%RED%**
+ItemDisplay[ELT			SET		SOCK>0]:	%NAME% [%SOCKETS%]%RED%**
+
