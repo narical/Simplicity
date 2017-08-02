@@ -1,5 +1,10 @@
 # jnsl
-**Joy Narical's simplest lootfilter** for Path of Diablo
+**Joy Narical's simplest lootfilter** for [Path of Diablo](https://pathofdiablo.com).
+(*More information about loot filtration syntax can be found [here](http://pathofdiablo.com/wiki/index.php/Loot_Filtration)*)
+
+![Without lootfilter](/images/before.png)
+
+![With lootfilter](/images/after.png)
 
 ## Overview
 The most basic lootfilter, created with KISS (*Keep It Simple, Stupid*) principle in mind.
