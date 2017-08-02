@@ -26,7 +26,7 @@ This filter was intended to be used from the acts 4-5 of "Normal" difficulty onw
 * only Super/Greater potions left, white and gray respectively
 * hide (non-rare) arrows, bolts, chipped and flawed gems, throwing potions, and keys
 * tp/identify scrolls, thawing and antidote potions now barely visible
-* potentially expensive white/blue staves, wands and scepters with less then 4 sockets show their vendor price
+* potentially expensive white/blue staves, wands and scepters with less then 5 sockets show their vendor price
 * all ethereal items now preceded with word "etherial"
 * uniques and runewords have 'uniq' and 'runeword' marks for ease of distinguish
 * exceptional items have red asterix mark after their name, elite items have two
