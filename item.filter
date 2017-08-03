@@ -40,13 +40,13 @@ ItemDisplay[wms]: %BLACK% Thawing
 ItemDisplay[yps]: %BLACK% Antidote
 
 // Show fewer-socketed white/magic staves, wands and scepters with vendor price
-ItemDisplay[(WP11 OR WP12 OR WP13) !RARE !UNI !SET SOCK<5]: %NAME% ($ %PRICE%)
+ItemDisplay[(WP11 OR WP12 OR WP13) !RARE !UNI !SET SOCK<5]: %WHITE%%NAME% ($ %PRICE%)
 
 // ===>>> ADD YOUR CUSTOM RULES HERE! <<<===
 
 // NORMAL ITEMS
-ItemDisplay[NORM			NMAG	!SUP	!INF	SOCK<5]:
-ItemDisplay[NORM			NMAG	!SUP	!INF	SOCK>4]:	%NAME% [%SOCKETS%]
+ItemDisplay[NORM			NMAG	!SUP	!INF	!RW	SOCK<5]:
+ItemDisplay[NORM			NMAG	!SUP	!INF	!RW SOCK>4]:	%NAME% [%SOCKETS%]
 ItemDisplay[NORM			INF					]:
 ItemDisplay[NORM			MAG					]:
 ItemDisplay[NORM	ETH SUP		SOCK<2]:
@@ -65,14 +65,14 @@ ItemDisplay[NORM			SET		SOCK=0]:	%NAME%
 ItemDisplay[NORM			SET		SOCK>0]:	%NAME% [%SOCKETS%]
 
 // EXCEPTIONAL ITEMS
-ItemDisplay[EXC			NMAG	!SUP	!INF	SOCK<2]:
-ItemDisplay[EXC			NMAG	!SUP	!INF	SOCK>1]:	%NAME% [%SOCKETS%]%RED%*
+ItemDisplay[EXC			NMAG	!SUP	!INF	!RW	SOCK<2]:
+ItemDisplay[EXC			NMAG	!SUP	!INF	!RW	SOCK>1]:	%NAME% [%SOCKETS%]%RED%*
 ItemDisplay[EXC			INF					]:
 ItemDisplay[EXC			MAG		SOCK<2]:
 ItemDisplay[EXC			MAG		SOCK>1]:	%NAME% [%SOCKETS%]%RED%*
 ItemDisplay[EXC	ETH SUP		SOCK<2]:
 ItemDisplay[EXC	ETH SUP		SOCK>1]:	Ethereal %NAME% [%SOCKETS%]%RED%*
-ItemDisplay[EXC			SUP		SOCK<2]:	
+ItemDisplay[EXC			SUP		SOCK<2]:
 ItemDisplay[EXC			SUP		SOCK>1]:	%NAME% [%SOCKETS%]%RED%*
 ItemDisplay[EXC	ETH RARE	SOCK=0]:	Ethereal %NAME%%RED%*
 ItemDisplay[EXC	ETH RARE	SOCK>0]:	Ethereal %NAME% [%SOCKETS%]%RED%*
@@ -86,8 +86,8 @@ ItemDisplay[EXC			SET		SOCK=0]:	%NAME%%RED%*
 ItemDisplay[EXC			SET		SOCK>0]:	%NAME% [%SOCKETS%]%RED%*
 
 // ELITE ITEMS
-ItemDisplay[ELT			NMAG	!SUP	!INF	SOCK=0]:	%NAME%%RED%**
-ItemDisplay[ELT			NMAG	!SUP	!INF	SOCK>0]:	%NAME% [%SOCKETS%]%RED%**
+ItemDisplay[ELT			NMAG	!SUP	!INF	!RW	SOCK=0]:	%NAME%%RED%**
+ItemDisplay[ELT			NMAG	!SUP	!INF	!RW	SOCK>0]:	%NAME% [%SOCKETS%]%RED%**
 ItemDisplay[ELT			INF					]:
 ItemDisplay[ELT			MAG		SOCK=0]:	%NAME%%RED%**
 ItemDisplay[ELT			MAG		SOCK>0]:	%NAME% [%SOCKETS%]%RED%**
