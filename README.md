@@ -18,7 +18,7 @@ This filter was intended to be used from the acts 4-5 of "Normal" difficulty onw
 * clear almost useless trash
 * keep game experience as vanilla as possible
 * be short and crystal clear to understand
-* ease of modification
+* ease to modify
 
 ### Features
 * names of very common items shortened
@@ -26,23 +26,23 @@ This filter was intended to be used from the acts 4-5 of "Normal" difficulty onw
 * all ethereal items now preceded with word "etherial"
 * uniques and runewords have 'uniq' and 'runeword' marks for ease of distinguish
 * socketed items have number of sockets followed after their names
-* potentially expensive staves, wands and scepters with less then 5 sockets show their vendor price
+* potentially expensive staves, wands and scepters show their vendor price
 * different display options for every set of items' tier (normal, exceptional, elite), quality (inferior, superior, magic etc.) and number of sockets
 * show charms, jewelry, uniques, set items and other important stuff
 * minimal size of gold piles shown limited to 500
 * only Super/Greater potions left, white and gray respectively
-* hide (non-rare) arrows, bolts, chipped and flawed gems, throwing potions, and keys
+* hide (non-rare) arrows and bolts, chipped and flawed gems, throwing potions, and keys
 * tp/identify scrolls, thawing and antidote potions now barely visible
 
 ## How it works
 Every line represents single rule, which consist of "conditions" and "display" parts.  
 ItemDisplay\[ *conditions* \]: *what to display*  
 If *display* part of the rule (after colon) is empty - game hides an item.  
-For every item on screen, game checks rules list in plain order until *conditions* are met, and draw item's name according to *display* part of that particular rule. **All following rules for that item are discarded, even if their conditions match the item.**
+For every item on screen, game checks rules list in plain order until *conditions* are met, and draws item's name according to *display* part of that particular rule. **All following rules for that item are discarded, even if their conditions match the item.**
 
-For example, if there's two rules, first to show rares, second to show socket number next to socketed items, all rares will be shown without socket number even if they have sockets. You can workaround that by adding new rule before others, which checks if item is rare AND have sockets simultaneously. JNSL sometimes ignoring such cases for internal simplicity, implying that player will check good item anyway (for example, it draw white scepters with vendor price, and rare/unique scepters without it)
+For example, if there's two rules, first to show rares, second to show socket number next to socketed items, all rares will be shown without socket number even if they have sockets. You can workaround that by adding new rule before others, which checks if item is rare AND have sockets simultaneously. JNSL sometimes ignoring such cases for internal simplicity, implying that player will check good item anyway (for example, it draws white scepters with vendor price, and rare/unique scepters without it)
 
-Main filter part consist of three blocks (one per item tier - normal, exceptional and elite), which configure how to show all possible properties combinations of that tier. Here's the block for normal items:
+Main filter part consists of three blocks (one per item tier - normal, exceptional and elite). Each block describes how to show all possible properties combinations of that tier. Here's the block for normal items:
 <pre>
 // NORMAL ITEMS
 ItemDisplay[NORM NMAG !SUP !INF !RW SOCK<5]:
@@ -65,9 +65,9 @@ ItemDisplay[NORM SET SOCK=0]: %NAME%
 ItemDisplay[NORM SET SOCK>0]: %NAME% [%SOCKETS%]
 </pre>
 
-It begins with **if normal-tier, non-magical, not superior, not inferior, not runeword item have less then five sockets  - hide it**.  
-Then **if same item have five or six sockets - show it's name with number of sockets (with brakes) after it**.  
-Then **if normal-tier item is inferior - hide it**  
+It begins with **if normal, non-magical, not superior, not inferior, not runeword item have less then five sockets  - hide it**.  
+Then **if same item have five or six sockets - show number of sockets (with brakes) after it's name**.  
+Then **if normal item is inferior - hide it**  
 Last part of block means that all rare, unique, runeword and set items will be shown, with *etherial* added before etherial, *uniq* and *runeword* added after corresponding item name.  
 Exceptional and elite blocks configured the same way.
 
