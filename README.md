@@ -1,8 +1,9 @@
-# Simplicity 
-**JNarical's simplest lootfilter** for [Path of Diablo](https://pathofdiablo.com).
-# \[[DOWNLOAD](https://raw.githubusercontent.com/narical/jnsl/master/item.filter)\]
+# Simplicity
 
+**JNarical's simplest lootfilter** for [Path of Diablo](https://pathofdiablo.com).  
 (*More information about loot filtration syntax can be found [here](http://pathofdiablo.com/wiki/index.php/Loot_Filtration)*)
+
+# \[[DOWNLOAD](https://raw.githubusercontent.com/narical/jnsl/master/item.filter)\]
 
 ### Before:
 ![Without lootfilter](/images/before.png)
