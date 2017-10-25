@@ -1,4 +1,4 @@
-# jnsl 
+# JSL 
 **Joy Narical's simplest lootfilter** for [Path of Diablo](https://pathofdiablo.com).
 # \[[DOWNLOAD](https://raw.githubusercontent.com/narical/jnsl/master/item.filter)\]
 
