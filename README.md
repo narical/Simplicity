@@ -30,7 +30,7 @@ This filter was intended to be used from the acts 4-5 of "Normal" difficulty onw
 * potentially expensive staves, wands and scepters show their vendor price
 * different display options for every set of items' tier (normal, exceptional, elite), quality (inferior, superior, magic etc.) and number of sockets
 * show charms, jewelry, uniques, set items and other important stuff
-* minimal size of gold piles shown limited to 500
+* minimal size of gold piles shown limited to 500 (it's meant to be changed to your liking)
 * only Super/Greater potions left, white and gray respectively
 * hide (non-rare) arrows and bolts, chipped and flawed gems, throwing potions, and keys
 * tp/identify scrolls, thawing and antidote potions now barely visible
