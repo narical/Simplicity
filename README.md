@@ -1,5 +1,5 @@
-# JSL 
-**Joy Narical's simplest lootfilter** for [Path of Diablo](https://pathofdiablo.com).
+# Simplicity 
+**JNarical's simplest lootfilter** for [Path of Diablo](https://pathofdiablo.com).
 # \[[DOWNLOAD](https://raw.githubusercontent.com/narical/jnsl/master/item.filter)\]
 
 (*More information about loot filtration syntax can be found [here](http://pathofdiablo.com/wiki/index.php/Loot_Filtration)*)
@@ -40,7 +40,7 @@ ItemDisplay\[ *conditions* \]: *what to display*
 If *display* part of the rule (after colon) is empty - game hides an item.  
 For every item on screen, game checks rules list in plain order until *conditions* are met, and draws item's name according to *display* part of that particular rule. **All following rules for that item are discarded, even if their conditions match the item.**
 
-For example, if there's two rules, first to show rares, second to show socket number next to socketed items, all rares will be shown without socket number even if they have sockets. You can workaround that by adding new rule before others, which checks if item is rare AND have sockets simultaneously. JNSL sometimes ignoring such cases for internal simplicity, implying that player will check good item anyway (for example, it draws white scepters with vendor price, and rare/unique scepters without it)
+For example, if there's two rules, first to show rares, second to show socket number next to socketed items, all rares will be shown without socket number even if they have sockets. You can workaround that by adding new rule before others, which checks if item is rare AND have sockets simultaneously. **Simplicity** sometimes ignoring such cases for, you know, internal simplicity, implying that player will check good item anyway (for example, it draws white scepters with vendor price, and rare/unique scepters without it)
 
 Main filter part consists of three blocks (one per item tier - normal, exceptional and elite). Each block describes how to show all possible properties combinations of that tier. Here's the block for normal items:
 <pre>
