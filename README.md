@@ -68,7 +68,7 @@ ItemDisplay[NORM SET SOCK>0]: %NAME% [%SOCKETS%]
 It begins with **if normal, non-magical, not superior, not inferior, not runeword item have less then five sockets  - hide it**.  
 Then **if same item have five or six sockets - show number of sockets (with brakes) after it's name**.  
 Then **if normal item is inferior - hide it**  
-Last part of block means that all rare, unique, runeword and set items will be shown, with *etherial* added before etherial, *uniq* and *runeword* added after corresponding item name.  
+Last part of block means that all rare, unique, runeword and set items will be shown, with *etherial* added before, and *uniq* and *runeword* added after corresponding item name.  
 Exceptional and elite blocks configured the same way.
 
 ## Installation
