@@ -35,7 +35,7 @@ This filter was intended to be used from the acts 4-5 of "Normal" difficulty onw
 * tp/identify scrolls, thawing and antidote potions now barely visible
 
 ## How it works
-Every line represents single rule, which consist of "conditions" and "display" parts.
+Every line represents single rule, which consist of "conditions" and "display" parts.  
 ItemDisplay\[ *conditions* \]: *what to display*  
 If *display* part of the rule (after colon) is empty - game hides an item.  
 For every item on screen, game checks rules list in plain order until *conditions* are met, and draw item's name according to *display* part of that particular rule. **All following rules for that item are discarded, even if their conditions match the item.**
