@@ -26,7 +26,7 @@ The most basic lootfilter, created with KISS (*Keep It Simple, Stupid*) principl
 * all ethereal items now preceded with word "etherial"
 * uniques and runewords have 'uniq' and 'runeword' marks for ease of distinguish
 * socketed items have number of sockets followed after their names
-* potentially expensive staves, wands and scepters show their vendor price
+* potentially expensive items show their vendor price
 * different display options for every set of items' tier (normal, exceptional, elite), quality (inferior, superior, magic etc.) and number of sockets
 * show charms, jewelry, uniques, set items and other important stuff
 * minimal size of gold piles shown limited to 500 (it's meant to be changed to your liking)
@@ -45,31 +45,24 @@ For example, if there's two rules, first to show rares, second to show socket nu
 Main filter part consists of three blocks (one per item tier - normal, exceptional and elite). Each block describes how to show all possible properties combinations of that tier. Here's the block for normal items:
 <pre>
 // NORMAL ITEMS
-ItemDisplay[NORM NMAG !SUP !INF !RW SOCK<5]:
-ItemDisplay[NORM NMAG !SUP !INF !RW SOCK>4]: %NAME% [%SOCKETS%]
-ItemDisplay[NORM INF]:
+ItemDisplay[NORM NMAG !RW]:
 ItemDisplay[NORM MAG]:
-ItemDisplay[NORM ETH SUP SOCK<2]:
-ItemDisplay[NORM ETH SUP SOCK>1]: Ethereal %NAME% [%SOCKETS%]
-ItemDisplay[NORM SUP SOCK<5]:
-ItemDisplay[NORM SUP SOCK>4]: %NAME% [%SOCKETS%]
 ItemDisplay[NORM ETH RARE SOCK=0]: Ethereal %NAME%
-ItemDisplay[NORM ETH RARE SOCK>0]: Ethereal %NAME% [%SOCKETS%]
-ItemDisplay[NORM RARE	SOCK=0]: %NAME%
-ItemDisplay[NORM RARE	SOCK>0]: %NAME% [%SOCKETS%]
-ItemDisplay[NORM ETH UNI]: Ethereal %NAME% (uniq)
-ItemDisplay[NORM UNI]: %NAME% (uniq)
-ItemDisplay[NORM ETH RW ]: Ethereal %NAME% (runeword)
+ItemDisplay[NORM ETH RARE]: Ethereal %NAME% [%SOCKETS%]
+ItemDisplay[NORM RARE SOCK=0]: %NAME%
+ItemDisplay[NORM RARE]: %NAME% [%SOCKETS%]
+ItemDisplay[NORM ETH UNI SOCK=0]: Ethereal %NAME% (uniq)
+ItemDisplay[NORM ETH UNI]: Ethereal %NAME% [%SOCKETS%](uniq)
+ItemDisplay[NORM UNI SOCK=0]: %NAME% (uniq)
+ItemDisplay[NORM UNI]: %NAME% [%SOCKETS%](uniq)
+ItemDisplay[NORM ETH RW]: Ethereal %NAME% (runeword)
 ItemDisplay[NORM RW]:	%NAME% (runeword)
-ItemDisplay[NORM SET SOCK=0]: %NAME%
-ItemDisplay[NORM SET SOCK>0]: %NAME% [%SOCKETS%]
+ItemDisplay[NORM SET SOCK=0]:	%NAME%
+ItemDisplay[NORM SET]: %NAME% [%SOCKETS%]
 </pre>
 
-It begins with **if normal, non-magical, not superior, not inferior, not runeword item have less then five sockets  - hide it**.  
-Then **if same item have five or six sockets - show number of sockets (with brakes) after it's name**.  
-Then **if normal item is inferior - hide it**  
-Last part of block means that all rare, unique, runeword and set items will be shown, with *etherial* added before, and *uniq* and *runeword* added after corresponding item name.  
-Exceptional and elite blocks configured the same way.
+First two lines hide all non-magical and magical items. Runewords counts as "non-magic" too, so we exclude them with !RW. Third line shows etherial non-socketed rares, adding word "etherial" before item name. Fourth line is similar, although it adds number of sockets in square brackets after item's name. Remember, all items without sockets was already processed by previous line, so we can be sure *there are* sockets in it. Fifth and six lines are just the same, only without "etherial" property. Same story with uniques - four next lines. No reason to show socket number for runewords, so only two lines for them. Set items can't be etherial, but we need socket number this time - so another two lines.  
+Rules for exceptional and elite items are made the same way.
 
 ## Installation
 Download **item.filter** file and place it in *Path of Diablo* folder. Enable **custom loot filter** option in PoD settings (CTRL+click in bottom-left corner).
