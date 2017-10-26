@@ -1,23 +1,25 @@
-﻿// Simplest Lootfilter by Joy Narical, 2017
+// Simplicity lootfilter by Joy Narical, 2017
 // more info at http://pathofdiablo.com/wiki/index.php/Loot_Filtration
 
 // Hide gold piles below certain treshhold
 ItemDisplay[GOLD<500]:
 
 // POTIONS
-ItemDisplay[hp1 OR hp2 OR hp3]:									// hide low-grade healing potions
-ItemDisplay[mp1 OR mp2 OR mp3]:									// hide low-grade mana potions
+ItemDisplay[hp1 OR hp2 OR hp3]: // hide low-grade healing potions
+ItemDisplay[mp1 OR mp2 OR mp3]: // hide low-grade mana potions
 
-ItemDisplay[hp4]: %RED%[%GRAY%Health%RED%]						// Greater Healing potion
-ItemDisplay[hp5]: %RED%[%WHITE%Health%RED%]						// Super Healing potion
-ItemDisplay[mp4]: %BLUE%[%GRAY%Mana%BLUE%]						// Greater Mana potion
-ItemDisplay[mp5]: %BLUE%[%WHITE%Mana%BLUE%]						// Super Mana potion
-ItemDisplay[rvs]: %PURPLE%[%GRAY%Rejuvenation%PURPLE%]			// Rejuvenation potion
-ItemDisplay[rvl]: %PURPLE%[%WHITE%Rejuvenation%PURPLE%]			// Full Rejuvenation potion
+ItemDisplay[hp4]: %RED%[%GRAY%Health%RED%] // Greater Healing potion
+ItemDisplay[hp5]: %RED%[%WHITE%Health%RED%] // Super Healing potion
+ItemDisplay[mp4]: %BLUE%[%GRAY%Mana%BLUE%] // Greater Mana potion
+ItemDisplay[mp5]: %BLUE%[%WHITE%Mana%BLUE%] // Super Mana potion
+ItemDisplay[rvs]: %PURPLE%[%GRAY%Rejuvenation%PURPLE%] // Rejuvenation potion
+ItemDisplay[rvl]: %PURPLE%[%WHITE%Rejuvenation%PURPLE%] // Full Rejuvenation potion
 
-// hide low-grade gems
-ItemDisplay[gcv OR gcy OR gcb OR gcg OR gcr OR gcw OR skc]:		// chipped
-ItemDisplay[gfv OR gfy OR gfb OR gfg OR gfr OR gfw OR skf]:		// flawed
+// hide gems by grade, (un)comment if necessary
+ItemDisplay[gcv OR gcy OR gcb OR gcg OR gcr OR gcw OR skc]: // chipped
+ItemDisplay[gfv OR gfy OR gfb OR gfg OR gfr OR gfw OR skf]: // flawed
+//ItemDisplay[gsv OR gsy OR gsb OR gsg OR gsr OR gsw OR sks]: // standart
+//ItemDisplay[glv OR gly OR glb OR glg OR glr OR glw OR skl]: // flawless
 
 // hide white/magic arrows and bolts
 ItemDisplay[(aq2 OR cq2) !RARE]:
@@ -39,8 +41,12 @@ ItemDisplay[isc]: %BLACK% Identify
 ItemDisplay[wms]: %BLACK% Thawing
 ItemDisplay[yps]: %BLACK% Antidote
 
-// Show fewer-socketed white/magic staves, wands and scepters with vendor price
-ItemDisplay[(WP11 OR WP12 OR WP13) !RARE !UNI !SET SOCK<5]: %WHITE%%NAME% ($ %PRICE%)
+// Show possible expensive, fewer-socketed white/magic items with vendor price
+ItemDisplay[(WP11 OR WP12 OR WP13) (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // staves, wands and scepters
+ItemDisplay[CL1 (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // Druid pelts
+ItemDisplay[CL2 (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // Barbarian helmets
+ItemDisplay[CL4 (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // Necromancer shields
+ItemDisplay[CL6 (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // Sorceress weapons
 
 // ===>>> ADD YOUR CUSTOM RULES HERE! <<<===
 
