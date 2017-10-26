@@ -12,7 +12,7 @@
 ![With lootfilter](/images/after.png)
 
 ## Overview
-The most basic lootfilter, created with KISS (*Keep It Simple, Stupid*) principle in mind. As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~80 lines (not including comments), and it's very easy to understand and modify. This filter was intended to be used from the acts 4-5 of "Normal" difficulty onwards.
+The most basic lootfilter, created with KISS (*Keep It Simple, Stupid*) principle in mind. As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~75 lines (not including comments), and it's very easy to understand and modify. This filter was intended to be used from the acts 4-5 of "Normal" difficulty onwards.
 
 ### Goals
 * clear almost useless trash
