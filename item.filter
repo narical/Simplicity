@@ -18,7 +18,7 @@ ItemDisplay[rvl]: %PURPLE%[%WHITE%Rejuvenation%PURPLE%] // Full Rejuvenation pot
 // hide gems by grade, (un)comment if necessary
 ItemDisplay[gcv OR gcy OR gcb OR gcg OR gcr OR gcw OR skc]: // chipped
 ItemDisplay[gfv OR gfy OR gfb OR gfg OR gfr OR gfw OR skf]: // flawed
-//ItemDisplay[gsv OR gsy OR gsb OR gsg OR gsr OR gsw OR sks]: // standart
+//ItemDisplay[gsv OR gsy OR gsb OR gsg OR gsr OR gsw OR sku]: // standart
 //ItemDisplay[glv OR gly OR glb OR glg OR glr OR glw OR skl]: // flawless
 
 // hide white/magic arrows and bolts
