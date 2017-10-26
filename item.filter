@@ -22,7 +22,7 @@ ItemDisplay[gfv OR gfy OR gfb OR gfg OR gfr OR gfw OR skf]: // flawed
 //ItemDisplay[glv OR gly OR glb OR glg OR glr OR glw OR skl]: // flawless
 
 // hide white/magic arrows and bolts
-ItemDisplay[(aq2 OR cq2) !RARE]:
+ItemDisplay[(aq2 OR cq2) (NMAG OR MAG)]:
 
 //hide Choking, Exploding, Fulminating, Oil, Rancid, Strangling potions
 ItemDisplay[gpm OR opm OR opl OR ops OR gps OR gpl]:
