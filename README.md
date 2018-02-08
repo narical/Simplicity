@@ -12,9 +12,9 @@
 ![With lootfilter](/images/after.png)
 
 ## Overview
-The most basic lootfilter, created with KISS (*Keep It Simple, Stupid*) principle in mind.
+**Simplicity** is made for **casual Diablo II players** - not for powerplay and high-efficient grind, but for smoother vanilla experience with some non-intrusive quality-of-life features.
 
-Unlike others, this filter is **rather different**. It isn't supposed to hint you about crafting bases or something, it isn't supposed to hide maximum loot as possible, it don't takes to account character level for hiding different grades of gems. Otherwise, game still have pretty vanilla look, with some non-intrusive Quality-of-Life features, without most of trashy loot.
+Unlike others, this filter is **rather different**. It isn't supposed to hint you about crafting bases or something, it isn't supposed to hide maximum loot as possible, it don't takes to account character level for hiding different grades of gems.
 
 As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~75 lines (not including comments), and it's very easy to understand and modify. **Furthermore, it intended to be edited to your liking - gold piles size, gems grades, class-specific items, etc** 
 
