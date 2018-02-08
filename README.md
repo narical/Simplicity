@@ -12,7 +12,11 @@
 ![With lootfilter](/images/after.png)
 
 ## Overview
-The most basic lootfilter, created with KISS (*Keep It Simple, Stupid*) principle in mind. As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~75 lines (not including comments), and it's very easy to understand and modify. This filter was intended to be used from the acts 4-5 of "Normal" difficulty onwards.
+The most basic lootfilter, created with KISS (*Keep It Simple, Stupid*) principle in mind.
+
+Unlike others, this filter is **rather different**. It isn't supposed to hint you about crafting bases or something, it isn't supposed to hide maximum loot as possible, it don't takes to account character level for hiding different grades of gems. Otherwise, game still have pretty vanilla look, with some non-intrusive Quality-of-Life features, without most of trashy loot.
+
+As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~75 lines (not including comments), and it's very easy to understand and modify. **Furthermore, it intended to be edited to your liking - gold piles size, gems grades, class-specific items, etc** 
 
 ### Goals
 * clear almost useless trash
