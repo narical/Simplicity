@@ -1,12 +1,23 @@
 // Simplicity lootfilter by Joy Narical, 2018
 // more info at http://pathofdiablo.com/wiki/index.php/Loot_Filtration
 
-// Hide gold piles below certain treshhold
-ItemDisplay[GOLD<500]:
+// Hide gold piles below certain treshhold based on character level
+ItemDisplay[CLVL>9  GOLD<50]:
+ItemDisplay[CLVL>19 GOLD<100]:
+ItemDisplay[CLVL>29 GOLD<300]:
+ItemDisplay[CLVL>39 GOLD<400]:
+ItemDisplay[CLVL>49 GOLD<500]:
 
 // POTIONS
-ItemDisplay[hp1 OR hp2 OR hp3]: // hide low-grade healing potions
-ItemDisplay[mp1 OR mp2 OR mp3]: // hide low-grade mana potions
+// hide low-grade healing potions based on character level
+ItemDisplay[hp1 AND CLVL>9]:
+ItemDisplay[hp2 AND CLVL>14]:
+ItemDisplay[hp3 AND CLVL>24]:
+
+// hide low-grade mana potions based on character level
+ItemDisplay[mp1 AND CLVL>9]:
+ItemDisplay[mp2 AND CLVL>14]:
+ItemDisplay[mp3 AND CLVL>24]:
 
 ItemDisplay[hp4]: %RED%[%GRAY%Health%RED%] // Greater Healing potion
 ItemDisplay[hp5]: %RED%[%WHITE%Health%RED%] // Super Healing potion
@@ -15,31 +26,30 @@ ItemDisplay[mp5]: %BLUE%[%WHITE%Mana%BLUE%] // Super Mana potion
 ItemDisplay[rvs]: %PURPLE%[%GRAY%Rejuvenation%PURPLE%] // Rejuvenation potion
 ItemDisplay[rvl]: %PURPLE%[%WHITE%Rejuvenation%PURPLE%] // Full Rejuvenation potion
 
-// hide gems by grade, (un)comment if necessary
-ItemDisplay[gcv OR gcy OR gcb OR gcg OR gcr OR gcw OR skc]: // chipped
-ItemDisplay[gfv OR gfy OR gfb OR gfg OR gfr OR gfw OR skf]: // flawed
-//ItemDisplay[gsv OR gsy OR gsb OR gsg OR gsr OR gsw OR sku]: // standart
-//ItemDisplay[glv OR gly OR glb OR glg OR glr OR glw OR skl]: // flawless
+// hide gems by grade based on character level
+ItemDisplay[gcv OR gcy OR gcb OR gcg OR gcr OR gcw OR skc AND CLVL>14]: // chipped
+ItemDisplay[gfv OR gfy OR gfb OR gfg OR gfr OR gfw OR skf AND CLVL>24]: // flawed
+ItemDisplay[gsv OR gsy OR gsb OR gsg OR gsr OR gsw OR sku AND CLVL>59]: // standart
+//ItemDisplay[glv OR gly OR glb OR glg OR glr OR glw OR skl AND CLVL>85]: // flawless
 
-// hide white/magic arrows and bolts
-ItemDisplay[(aq2 OR cq2) (NMAG OR MAG)]:
+// hide white/magic arrows and bolts (show only for starting characters)
+ItemDisplay[(aq2 OR cq2) (NMAG OR MAG) CLVL>9]:
 
 //hide Choking, Exploding, Fulminating, Oil, Rancid, Strangling potions
-ItemDisplay[gpm OR opm OR opl OR ops OR gps OR gpl]:
-
-//hide locked chests' keys
-ItemDisplay[key]:
+// (show only for starting characters)
+ItemDisplay[gpm OR opm OR opl OR ops OR gps OR gpl AND CLVL>9]:
 
 // Wirt's leg :)
 ItemDisplay[leg]: %NAME%
 
-// Hide stamina potions
-// Make scrolls and thawing/antidote potions barely visible
-ItemDisplay[vps]:
-ItemDisplay[tsc]: %BLACK% TownPortal
-ItemDisplay[isc]: %BLACK% Identify
-ItemDisplay[wms]: %BLACK% Thawing
-ItemDisplay[yps]: %BLACK% Antidote
+// Make stamina, keys, scrolls and thawing/antidote potions barely visible
+// after first X levels
+ItemDisplay[CLVL>9 vps]: %BLACK% Stamina Potion
+ItemDisplay[CLVL>9 key]: %BLACK% Key
+ItemDisplay[CLVL>9 tsc]: %BLACK% TownPortal
+ItemDisplay[CLVL>9 isc]: %BLACK% Identify
+ItemDisplay[CLVL>9 wms]: %BLACK% Thawing
+ItemDisplay[CLVL>9 yps]: %BLACK% Antidote
 
 // Show possible expensive, fewer-socketed white/magic items with vendor price
 ItemDisplay[(WP11 OR WP12 OR WP13) (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // staves, wands and scepters
@@ -51,20 +61,21 @@ ItemDisplay[CL6 (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // Sorceres
 // ===>>> ADD YOUR CUSTOM RULES HERE! <<<===
 
 // NORMAL ITEMS
-ItemDisplay[NORM NMAG !RW]:
-ItemDisplay[NORM MAG]:
-ItemDisplay[NORM ETH RARE SOCK=0]: Ethereal %NAME%
-ItemDisplay[NORM ETH RARE]: Ethereal %NAME% [%SOCKETS%]
-ItemDisplay[NORM RARE SOCK=0]: %NAME%
-ItemDisplay[NORM RARE]: %NAME% [%SOCKETS%]
-ItemDisplay[NORM ETH UNI SOCK=0]: Ethereal %NAME% (uniq)
-ItemDisplay[NORM ETH UNI]: Ethereal %NAME% [%SOCKETS%](uniq)
-ItemDisplay[NORM UNI SOCK=0]: %NAME% (uniq)
-ItemDisplay[NORM UNI]: %NAME% [%SOCKETS%](uniq)
-ItemDisplay[NORM ETH RW]: Ethereal %NAME% (runeword)
-ItemDisplay[NORM RW]:	%NAME% (runeword)
-ItemDisplay[NORM SET SOCK=0]:	%NAME%
-ItemDisplay[NORM SET]: %NAME% [%SOCKETS%]
+ItemDisplay[NORM CLVL>4  NMAG !RW INF]:
+ItemDisplay[NORM CLVL>24 NMAG !RW]:
+ItemDisplay[NORM CLVL>24 MAG]:
+ItemDisplay[NORM CLVL>24 ETH RARE SOCK=0]: Ethereal %NAME%
+ItemDisplay[NORM CLVL>24 ETH RARE]: Ethereal %NAME% [%SOCKETS%]
+ItemDisplay[NORM CLVL>24 RARE SOCK=0]: %NAME%
+ItemDisplay[NORM CLVL>24 RARE]: %NAME% [%SOCKETS%]
+ItemDisplay[NORM CLVL>24 ETH UNI SOCK=0]: Ethereal %NAME% (uniq)
+ItemDisplay[NORM CLVL>24 ETH UNI]: Ethereal %NAME% [%SOCKETS%](uniq)
+ItemDisplay[NORM CLVL>24 UNI SOCK=0]: %NAME% (uniq)
+ItemDisplay[NORM CLVL>24 UNI]: %NAME% [%SOCKETS%](uniq)
+ItemDisplay[NORM CLVL>24 ETH RW]: Ethereal %NAME% (runeword)
+ItemDisplay[NORM CLVL>24 RW]:	%NAME% (runeword)
+ItemDisplay[NORM CLVL>24 SET SOCK=0]:	%NAME%
+ItemDisplay[NORM CLVL>24 SET]: %NAME% [%SOCKETS%]
 
 // EXCEPTIONAL ITEMS
 ItemDisplay[EXC NMAG ETH !RW SOCK>1]: Ethereal %NAME% [%SOCKETS%]%RED%*
