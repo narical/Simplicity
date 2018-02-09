@@ -1,4 +1,4 @@
-# Simplicity
+# Simplicity v2.0
 
 **JNarical's simplest lootfilter** for [Path of Diablo](https://pathofdiablo.com).  
 (*More information about loot filtration syntax can be found [here](http://pathofdiablo.com/wiki/index.php/Loot_Filtration)*)
