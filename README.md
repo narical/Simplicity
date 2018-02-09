@@ -14,9 +14,9 @@
 ## Overview
 **Simplicity** is made for **casual Diablo II players** - not for powerplay and high-efficient grind, but for smoother vanilla experience with some non-intrusive quality-of-life features.
 
-Unlike others, this filter is **rather different**. It isn't supposed to hint you about crafting bases or something, it isn't supposed to hide maximum loot as possible, it don't takes to account character level for hiding different grades of gems.
+Unlike others, this filter is **rather different**. It isn't supposed to hint you about crafting bases or something, it isn't supposed to hide maximum loot as possible, or show names of unidentified uniques and set items like if you already identified it.
 
-As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~75 lines (not including comments), and it's very easy to understand and modify. **Furthermore, it intended to be edited to your liking - gold piles size, gems grades, class-specific items, etc** 
+As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~100 lines (not including comments), and it's very easy to understand and modify. It can be enabled right from the level 1.
 
 ### Goals
 * clear almost useless trash
