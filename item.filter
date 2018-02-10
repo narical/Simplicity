@@ -2,11 +2,12 @@
 // more info at http://pathofdiablo.com/wiki/index.php/Loot_Filtration
 
 // Hide gold piles below certain treshhold based on character level
-ItemDisplay[CLVL>9  GOLD<50]:
-ItemDisplay[CLVL>19 GOLD<100]:
-ItemDisplay[CLVL>29 GOLD<300]:
-ItemDisplay[CLVL>39 GOLD<400]:
-ItemDisplay[CLVL>49 GOLD<500]:
+ItemDisplay[CLVL>7  GOLD<50]:
+ItemDisplay[CLVL>14 GOLD<100]:
+ItemDisplay[CLVL>21 GOLD<200]:
+ItemDisplay[CLVL>28 GOLD<300]:
+ItemDisplay[CLVL>35 GOLD<400]:
+ItemDisplay[CLVL>40 GOLD<500]:
 
 // POTIONS
 ItemDisplay[hp1 CLVL<15]: %RED%[%GRAY%Health%RED%]
@@ -55,12 +56,12 @@ ItemDisplay[leg]: %NAME%
 // after first X levels
 ItemDisplay[key]: %GRAY%Key
 
-ItemDisplay[tsc]: %GREEN%[%GRAY%TownPortal%GREEN%]
-ItemDisplay[isc]: %GREEN%[%GRAY%Identify%GREEN%]
+ItemDisplay[tsc]: %BLUE%P%WHITE%ortal
+ItemDisplay[isc]: %GREEN%I%WHITE%dentify
 
-ItemDisplay[vps]: %WHITE%[%GRAY%Stamina%WHITE%]
-ItemDisplay[wms]: %WHITE%[%GRAY%Thawing%WHITE%]
-ItemDisplay[yps]: %WHITE%[%GRAY%Antidote%WHITE%] 
+ItemDisplay[vps]: %BLACK%Stamina
+ItemDisplay[wms]: %BLACK%Thawing
+ItemDisplay[yps]: %BLACK%Antidote
 
 // Show possible expensive, fewer-socketed white/magic items with vendor price
 ItemDisplay[(WP11 OR WP12 OR WP13) (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // staves, wands and scepters
@@ -73,8 +74,7 @@ ItemDisplay[CL6 (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // Sorceres
 
 // NORMAL ITEMS
 ItemDisplay[NORM CLVL>4  NMAG !RW INF]: // hide inferior items from char level 5
-ItemDisplay[NORM CLVL>14 NMAG !RW SOCK<2]: // hide normal white items with 0-1 socket from char level 15 
-ItemDisplay[NORM CLVL>24 MAG]: // hide normal magic items from char level 25
+ItemDisplay[NORM CLVL>14 (NMAG OR MAG) !RW SOCK<2]:
 ItemDisplay[NORM CLVL>34 NMAG !RW]: // hide ALL normal white items from char level 35
 
 ItemDisplay[NORM NMAG ETH !RW SOCK=0]: Ethereal %NAME%
