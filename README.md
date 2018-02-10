@@ -18,6 +18,8 @@ Unlike others, this filter is **rather different**. It isn't supposed to hint yo
 
 As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~100 lines (not including comments), and it's very easy to understand and modify. It can be enabled right from the level 1.
 
+At levels 1-4 filter shows everything, from level 5 it hides inferior items, from level 10 it begins to hide more and more items, considered useless, based on certain character level threshholds. 
+
 ### Goals
 * clear almost useless trash
 * keep game experience as vanilla as possible
