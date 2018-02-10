@@ -51,8 +51,10 @@ For example, if there's two rules, first to show rares, second to show socket nu
 Main filter part consists of three blocks (one per item tier - normal, exceptional and elite). Each block describes how to show all possible properties combinations of that tier. Here's the block for normal items:
 <pre>
 // NORMAL ITEMS
-ItemDisplay[NORM NMAG !RW]:
-ItemDisplay[NORM MAG]:
+ItemDisplay[NORM CLVL>4  NMAG !RW INF]:
+ItemDisplay[NORM CLVL>24 NMAG !RW]:
+ItemDisplay[NORM CLVL>24 MAG]:
+
 ItemDisplay[NORM ETH RARE SOCK=0]: Ethereal %NAME%
 ItemDisplay[NORM ETH RARE]: Ethereal %NAME% [%SOCKETS%]
 ItemDisplay[NORM RARE SOCK=0]: %NAME%
@@ -67,7 +69,11 @@ ItemDisplay[NORM SET SOCK=0]:	%NAME%
 ItemDisplay[NORM SET]: %NAME% [%SOCKETS%]
 </pre>
 
-First two lines hide all non-magical and magical items. Runewords counts as "non-magic" too, so we exclude them with !RW. Third line shows etherial non-socketed rares, adding word "etherial" before item name. Fourth line is similar, although it adds number of sockets in square brackets after item's name. Remember, all items without sockets was already processed by previous line, so we can be sure *there are* sockets in it. Fifth and six lines are just the same, only without "etherial" property. Same story with uniques - four next lines. No reason to show socket number for runewords, so only two lines for them. Set items can't be etherial, but we need socket number this time - so another two lines.  
+First line hides inferior white items starting from character level 5.
+Next two lines hide all non-magical and magical items starting from character level 25.
+Runewords counts as "non-magic" too, so we exclude them with !RW.
+Fourth line shows etherial non-socketed rares, adding word "etherial" before item name.
+Fifth line is similar, although it adds number of sockets in square brackets after item's name. Remember, all items without sockets was already processed by previous line, so we can be sure *there are* sockets in it. Sixth and seventh lines are just the same, only without "etherial" property. Same story with uniques - four next lines. No reason to show socket number for runewords, so only two lines for them. Set items can't be etherial, but we need socket number this time - so another two lines.  
 Rules for exceptional and elite items are made the same way.
 
 ## Installation
