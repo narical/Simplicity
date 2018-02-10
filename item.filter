@@ -1,4 +1,4 @@
-// Simplicity v2.1 lootfilter by Joy Narical, 2018
+// Simplicity v2.2 lootfilter by Joy Narical, 2018
 // more info at http://pathofdiablo.com/wiki/index.php/Loot_Filtration
 
 // Hide gold piles below certain treshhold based on character level
@@ -9,20 +9,29 @@ ItemDisplay[CLVL>39 GOLD<400]:
 ItemDisplay[CLVL>49 GOLD<500]:
 
 // POTIONS
-// hide low-grade healing potions based on character level
-ItemDisplay[hp1 AND CLVL>9]:
-ItemDisplay[hp2 AND CLVL>14]:
-ItemDisplay[hp3 AND CLVL>24]:
+ItemDisplay[hp1 CLVL<15]: %RED%[%GRAY%Health%RED%]
+ItemDisplay[hp2 CLVL<15]: %RED%[%WHITE%Health%RED%]
+ItemDisplay[mp1 CLVL<15]: %BLUE%[%GRAY%Mana%BLUE%]
+ItemDisplay[mp2 CLVL<15]: %BLUE%[%WHITE%Mana%BLUE%]
+ItemDisplay[hp1 OR mp1]:
 
-// hide low-grade mana potions based on character level
-ItemDisplay[mp1 AND CLVL>9]:
-ItemDisplay[mp2 AND CLVL>14]:
-ItemDisplay[mp3 AND CLVL>24]:
+ItemDisplay[hp2 CLVL<20]: %RED%[%GRAY%Health%RED%]
+ItemDisplay[hp3 CLVL<20]: %RED%[%WHITE%Health%RED%]
+ItemDisplay[mp2 CLVL<20]: %BLUE%[%GRAY%Mana%BLUE%]
+ItemDisplay[mp3 CLVL<20]: %BLUE%[%WHITE%Mana%BLUE%]
+ItemDisplay[hp2 OR mp2]:
+
+ItemDisplay[hp3 CLVL<30]: %RED%[%GRAY%Health%RED%]
+ItemDisplay[hp4 CLVL<30]: %RED%[%WHITE%Health%RED%]
+ItemDisplay[mp3 CLVL<30]: %BLUE%[%GRAY%Mana%BLUE%]
+ItemDisplay[mp4 CLVL<30]: %BLUE%[%WHITE%Mana%BLUE%]
+ItemDisplay[hp3 OR mp3]:
 
 ItemDisplay[hp4]: %RED%[%GRAY%Health%RED%] // Greater Healing potion
 ItemDisplay[hp5]: %RED%[%WHITE%Health%RED%] // Super Healing potion
 ItemDisplay[mp4]: %BLUE%[%GRAY%Mana%BLUE%] // Greater Mana potion
 ItemDisplay[mp5]: %BLUE%[%WHITE%Mana%BLUE%] // Super Mana potion
+
 ItemDisplay[rvs]: %PURPLE%[%GRAY%Rejuvenation%PURPLE%] // Rejuvenation potion
 ItemDisplay[rvl]: %PURPLE%[%WHITE%Rejuvenation%PURPLE%] // Full Rejuvenation potion
 
@@ -44,12 +53,14 @@ ItemDisplay[leg]: %NAME%
 
 // Make stamina, keys, scrolls and thawing/antidote potions barely visible
 // after first X levels
-ItemDisplay[CLVL>9 vps]: %BLACK% Stamina Potion
-ItemDisplay[CLVL>9 key]: %BLACK% Key
-ItemDisplay[CLVL>9 tsc]: %BLACK% TownPortal
-ItemDisplay[CLVL>9 isc]: %BLACK% Identify
-ItemDisplay[CLVL>9 wms]: %BLACK% Thawing
-ItemDisplay[CLVL>9 yps]: %BLACK% Antidote
+ItemDisplay[key]: %GRAY%Key
+
+ItemDisplay[tsc]: %GREEN%[%GRAY%TownPortal%GREEN%]
+ItemDisplay[isc]: %GREEN%[%GRAY%Identify%GREEN%]
+
+ItemDisplay[vps]: %WHITE%[%GRAY%Stamina%WHITE%]
+ItemDisplay[wms]: %WHITE%[%GRAY%Thawing%WHITE%]
+ItemDisplay[yps]: %WHITE%[%GRAY%Antidote%WHITE%] 
 
 // Show possible expensive, fewer-socketed white/magic items with vendor price
 ItemDisplay[(WP11 OR WP12 OR WP13) (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // staves, wands and scepters
@@ -62,14 +73,15 @@ ItemDisplay[CL6 (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // Sorceres
 
 // NORMAL ITEMS
 ItemDisplay[NORM CLVL>4  NMAG !RW INF]: // hide inferior items from char level 5
-ItemDisplay[NORM CLVL>14 NMAG !RW SOCK=0]: // hide normal white items without sockets from char level 15 
+ItemDisplay[NORM CLVL>14 NMAG !RW SOCK<2]: // hide normal white items with 0-1 socket from char level 15 
 ItemDisplay[NORM CLVL>24 MAG]: // hide normal magic items from char level 25
 ItemDisplay[NORM CLVL>34 NMAG !RW]: // hide ALL normal white items from char level 35
 
-ItemDisplay[NORM NMAG ETH !RW SOCK>1]: Ethereal %NAME% [%SOCKETS%]
-ItemDisplay[NORM NMAG !RW SOCK>1]: %NAME% [%SOCKETS%]
-ItemDisplay[NORM MAG ETH SOCK>1]: Ethereal %NAME% [%SOCKETS%]%RED%*
-ItemDisplay[NORM MAG SOCK>1]: %NAME% [%SOCKETS%]%RED%*
+ItemDisplay[NORM NMAG ETH !RW SOCK=0]: Ethereal %NAME%
+ItemDisplay[NORM NMAG ETH !RW]: Ethereal %NAME% [%SOCKETS%]
+ItemDisplay[NORM NMAG !RW SOCK>0]: %NAME% [%SOCKETS%]
+ItemDisplay[NORM MAG ETH SOCK>1]: Ethereal %NAME% [%SOCKETS%]
+ItemDisplay[NORM MAG SOCK>1]: %NAME% [%SOCKETS%]
 ItemDisplay[NORM ETH RARE SOCK=0]: Ethereal %NAME%
 ItemDisplay[NORM ETH RARE]: Ethereal %NAME% [%SOCKETS%]
 ItemDisplay[NORM RARE SOCK=0]: %NAME%
