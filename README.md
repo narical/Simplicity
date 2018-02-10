@@ -1,4 +1,4 @@
-# Simplicity v2.0
+# Simplicity v2.1
 
 **JNarical's simplest lootfilter** for [Path of Diablo](https://pathofdiablo.com).  
 (*More information about loot filtration syntax can be found [here](http://pathofdiablo.com/wiki/index.php/Loot_Filtration)*)
@@ -14,11 +14,9 @@
 ## Overview
 **Simplicity** is made for **casual Diablo II players** - not for powerplay and high-efficient grind, but for smoother vanilla experience with some non-intrusive quality-of-life features.
 
-Unlike others, this filter is **rather different**. It isn't supposed to hint you about crafting bases or something, it isn't supposed to hide maximum loot as possible, or show names of unidentified uniques and set items like if you already identified it.
+Unlike others, this filter is **rather different**. It isn't supposed to hint you about crafting bases or something, it isn't supposed to hide maximum loot as possible, or show names of unidentified uniques and set items like if you already identified it. It isn't supposed to shorten items' names to 2-3 char abbreviations unknown to new players. It supposed to be **sane defaut itemfilter** which doesn't strips out anything important for new players' experience.
 
-As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~100 lines (not including comments), and it's very easy to understand and modify. It can be enabled right from the level 1.
-
-At levels 1-4 filter shows everything, from level 5 it hides inferior items, from level 10 it begins to hide more and more items, considered useless, based on certain character level threshholds. 
+As opposed to other lootfilters, consisting of 1000-2000 lines of code, it has only ~100 lines (not including comments), and it's very easy to understand and modify. At levels 1-4 filter shows everything, from level 5 it hides inferior items, from level 10 it begins to hide more and more items, considered useless, based on certain character level threshholds.
 
 ### Goals
 * clear almost useless trash
@@ -47,34 +45,6 @@ If *display* part of the rule (after colon) is empty - game hides an item.
 For every item on screen, game checks rules list in plain order until *conditions* are met, and draws item's name according to *display* part of that particular rule. **All following rules for that item are discarded, even if their conditions match the item.**
 
 For example, if there's two rules, first to show rares, second to show socket number next to socketed items, all rares will be shown without socket number even if they have sockets. You can workaround that by adding new rule before others, which checks if item is rare AND have sockets simultaneously. **Simplicity** sometimes ignoring such cases for, you know, internal simplicity, implying that player will check good item anyway (for example, it draws white scepters with vendor price, and rare/unique scepters without it)
-
-Main filter part consists of three blocks (one per item tier - normal, exceptional and elite). Each block describes how to show all possible properties combinations of that tier. Here's the block for normal items:
-<pre>
-// NORMAL ITEMS
-ItemDisplay[NORM CLVL>4  NMAG !RW INF]:
-ItemDisplay[NORM CLVL>24 NMAG !RW]:
-ItemDisplay[NORM CLVL>24 MAG]:
-
-ItemDisplay[NORM ETH RARE SOCK=0]: Ethereal %NAME%
-ItemDisplay[NORM ETH RARE]: Ethereal %NAME% [%SOCKETS%]
-ItemDisplay[NORM RARE SOCK=0]: %NAME%
-ItemDisplay[NORM RARE]: %NAME% [%SOCKETS%]
-ItemDisplay[NORM ETH UNI SOCK=0]: Ethereal %NAME% (uniq)
-ItemDisplay[NORM ETH UNI]: Ethereal %NAME% [%SOCKETS%](uniq)
-ItemDisplay[NORM UNI SOCK=0]: %NAME% (uniq)
-ItemDisplay[NORM UNI]: %NAME% [%SOCKETS%](uniq)
-ItemDisplay[NORM ETH RW]: Ethereal %NAME% (runeword)
-ItemDisplay[NORM RW]:	%NAME% (runeword)
-ItemDisplay[NORM SET SOCK=0]:	%NAME%
-ItemDisplay[NORM SET]: %NAME% [%SOCKETS%]
-</pre>
-
-First line hides inferior white items starting from character level 5.
-Next two lines hide all non-magical and magical items starting from character level 25.
-Runewords counts as "non-magic" too, so we exclude them with !RW.
-Fourth line shows etherial non-socketed rares, adding word "etherial" before item name.
-Fifth line is similar, although it adds number of sockets in square brackets after item's name. Remember, all items without sockets was already processed by previous line, so we can be sure *there are* sockets in it. Sixth and seventh lines are just the same, only without "etherial" property. Same story with uniques - four next lines. No reason to show socket number for runewords, so only two lines for them. Set items can't be etherial, but we need socket number this time - so another two lines.  
-Rules for exceptional and elite items are made the same way.
 
 ## Installation
 Download **item.filter** file and place it in *Path of Diablo* folder. Enable **custom loot filter** option in PoD settings (CTRL+click in bottom-left corner).
