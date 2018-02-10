@@ -1,4 +1,4 @@
-// Simplicity lootfilter by Joy Narical, 2018
+// Simplicity v2.1 lootfilter by Joy Narical, 2018
 // more info at http://pathofdiablo.com/wiki/index.php/Loot_Filtration
 
 // Hide gold piles below certain treshhold based on character level
@@ -62,9 +62,14 @@ ItemDisplay[CL6 (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // Sorceres
 
 // NORMAL ITEMS
 ItemDisplay[NORM CLVL>4  NMAG !RW INF]:
-ItemDisplay[NORM CLVL>24 NMAG !RW]:
+ItemDisplay[NORM CLVL>14 NMAG !RW SOCK=0]:
 ItemDisplay[NORM CLVL>24 MAG]:
+ItemDisplay[NORM CLVL>34 NMAG !RW]:
 
+ItemDisplay[NORM NMAG ETH !RW SOCK>1]: Ethereal %NAME% [%SOCKETS%]
+ItemDisplay[NORM NMAG !RW SOCK>1]: %NAME% [%SOCKETS%]
+ItemDisplay[NORM MAG ETH SOCK>1]: Ethereal %NAME% [%SOCKETS%]%RED%*
+ItemDisplay[NORM MAG SOCK>1]: %NAME% [%SOCKETS%]%RED%*
 ItemDisplay[NORM ETH RARE SOCK=0]: Ethereal %NAME%
 ItemDisplay[NORM ETH RARE]: Ethereal %NAME% [%SOCKETS%]
 ItemDisplay[NORM RARE SOCK=0]: %NAME%
