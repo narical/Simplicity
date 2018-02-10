@@ -64,18 +64,19 @@ ItemDisplay[CL6 (NMAG OR MAG) !RW SOCK<2]: %WHITE%%NAME% ($ %PRICE%) // Sorceres
 ItemDisplay[NORM CLVL>4  NMAG !RW INF]:
 ItemDisplay[NORM CLVL>24 NMAG !RW]:
 ItemDisplay[NORM CLVL>24 MAG]:
-ItemDisplay[NORM CLVL>24 ETH RARE SOCK=0]: Ethereal %NAME%
-ItemDisplay[NORM CLVL>24 ETH RARE]: Ethereal %NAME% [%SOCKETS%]
-ItemDisplay[NORM CLVL>24 RARE SOCK=0]: %NAME%
-ItemDisplay[NORM CLVL>24 RARE]: %NAME% [%SOCKETS%]
-ItemDisplay[NORM CLVL>24 ETH UNI SOCK=0]: Ethereal %NAME% (uniq)
-ItemDisplay[NORM CLVL>24 ETH UNI]: Ethereal %NAME% [%SOCKETS%](uniq)
-ItemDisplay[NORM CLVL>24 UNI SOCK=0]: %NAME% (uniq)
-ItemDisplay[NORM CLVL>24 UNI]: %NAME% [%SOCKETS%](uniq)
-ItemDisplay[NORM CLVL>24 ETH RW]: Ethereal %NAME% (runeword)
-ItemDisplay[NORM CLVL>24 RW]:	%NAME% (runeword)
-ItemDisplay[NORM CLVL>24 SET SOCK=0]:	%NAME%
-ItemDisplay[NORM CLVL>24 SET]: %NAME% [%SOCKETS%]
+
+ItemDisplay[NORM ETH RARE SOCK=0]: Ethereal %NAME%
+ItemDisplay[NORM ETH RARE]: Ethereal %NAME% [%SOCKETS%]
+ItemDisplay[NORM RARE SOCK=0]: %NAME%
+ItemDisplay[NORM RARE]: %NAME% [%SOCKETS%]
+ItemDisplay[NORM ETH UNI SOCK=0]: Ethereal %NAME% (uniq)
+ItemDisplay[NORM ETH UNI]: Ethereal %NAME% [%SOCKETS%](uniq)
+ItemDisplay[NORM UNI SOCK=0]: %NAME% (uniq)
+ItemDisplay[NORM UNI]: %NAME% [%SOCKETS%](uniq)
+ItemDisplay[NORM ETH RW]: Ethereal %NAME% (runeword)
+ItemDisplay[NORM RW]:	%NAME% (runeword)
+ItemDisplay[NORM SET SOCK=0]:	%NAME%
+ItemDisplay[NORM SET]: %NAME% [%SOCKETS%]
 
 // EXCEPTIONAL ITEMS
 ItemDisplay[EXC NMAG ETH !RW SOCK>1]: Ethereal %NAME% [%SOCKETS%]%RED%*
