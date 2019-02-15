@@ -1,4 +1,4 @@
-// Simplicity v2.3 lootfilter by Joy Narical, 2018
+// Simplicity v2.4 lootfilter by Joy Narical, 2019
 // more info at http://pathofdiablo.com/wiki/index.php/Loot_Filtration
 
 // Hide gold piles below certain treshhold based on character level
@@ -8,6 +8,10 @@ ItemDisplay[CLVL>21 GOLD<200]:
 ItemDisplay[CLVL>28 GOLD<300]:
 ItemDisplay[CLVL>35 GOLD<400]:
 ItemDisplay[CLVL>40 GOLD<500]:
+ItemDisplay[CLVL>60 GOLD<1000]:
+ItemDisplay[CLVL>70 GOLD<1500]:
+ItemDisplay[CLVL>80 GOLD<2000]:
+
 
 // POTIONS
 ItemDisplay[hp1 CLVL<15]: %RED%[%GRAY%Health%RED%]
@@ -27,6 +31,9 @@ ItemDisplay[hp4 CLVL<30]: %RED%[%WHITE%Health%RED%]
 ItemDisplay[mp3 CLVL<30]: %BLUE%[%GRAY%Mana%BLUE%]
 ItemDisplay[mp4 CLVL<30]: %BLUE%[%WHITE%Mana%BLUE%]
 ItemDisplay[hp3 OR mp3]:
+
+ItemDisplay[hp4 CLVL>70]:
+ItemDisplay[mp4 CLVL>70]:
 
 ItemDisplay[hp4]: %RED%[%GRAY%Health%RED%] // Greater Healing potion
 ItemDisplay[hp5]: %RED%[%WHITE%Health%RED%] // Super Healing potion
