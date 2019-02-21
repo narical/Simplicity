@@ -1,4 +1,4 @@
-// Simplicity v2.4 lootfilter by Joy Narical, 2019
+// Simplicity v2.5 lootfilter by Joy Narical, 2019
 // more info at http://pathofdiablo.com/wiki/index.php/Loot_Filtration
 
 // Hide gold piles below certain treshhold based on character level
@@ -124,7 +124,7 @@ ItemDisplay[EXC SET]: %NAME%%RED%*
 // ELITE ITEMS
 ItemDisplay[ELT NMAG ETH !RW SOCK>1]: Ethereal %NAME% [%SOCKETS%]%RED%**
 ItemDisplay[ELT NMAG !RW SOCK>1]: %NAME% [%SOCKETS%]%RED%**
-ItemDisplay[ELT NMAG !RW]:
+ItemDisplay[ELT NMAG !RW]: %NAME%%RED%**
 ItemDisplay[ELT MAG ETH SOCK>1]: Ethereal %NAME% [%SOCKETS%]%RED%**
 ItemDisplay[ELT MAG SOCK>1]: %NAME% [%SOCKETS%]%RED%**
 ItemDisplay[ELT MAG]: %NAME%%RED%**
